@@ -14,6 +14,7 @@ class Challenge2 (unittest.TestCase):
     def test_challenge2 (self):
         driver = self.driver
         driver.get("https://www.copart.com/")
+        self.assertIn("Copart", driver.title)
         driver.find_element_by_id("input-search").click()
         driver.find_element_by_id("input-search").clear()
         driver.find_element_by_id("input-search").send_keys("exotic")
@@ -40,7 +41,5 @@ class Challenge2 (unittest.TestCase):
         self.assertEqual("PORSCHE", driver.find_element_by_xpath(
             "(.//*[normalize-space(text()) and normalize-space(.)='Remove'])[1]/following::span[4]").text)
 
-
-
-
-
+if __name__ == '__main__':
+    unittest.main()
