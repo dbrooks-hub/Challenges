@@ -28,11 +28,7 @@ class Challenge3(unittest.TestCase):
         print (len(popular_searches))
         for x in popular_searches:
             print(x.text + "-" + x.get_attribute("href"))
-        #TO DO Assertions
-        #try: driver.find_element(by=how, value=what)
-        #except NoSuchElementException:
-            #return False
-        #return True
+        self.assertIsNotNone(x.text, x.get_attribute ('href'))
 
         self.while_loop()
         #### while loop ####
@@ -46,11 +42,8 @@ class Challenge3(unittest.TestCase):
         while i < len(popular_categories):
             print(popular_categories[i].text + "-" + popular_categories[i].get_attribute ("href"))
             i += 1
-        # TO DO Assertions
-        # try: driver.find_element(by=how, value=what)
-        # except NoSuchElementException:
-        # return False
-        # return True
+        #self.assertIsNotNone(popular_categories[i].text, popular_categories[i].get_attribute ("href"))
+        #i += 1 (NOT WORKING...do I need this?)
 
 if __name__ == '__main__':
     unittest.main()
