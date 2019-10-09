@@ -1,19 +1,21 @@
-class fibonacci_sequence():
-    def fibR(n):
-        """Recursive function to print Fibonacci sequence"""
-        if n <= 1:
-            return n
-        else:
-            return (fibR(n - 1) + fibR(n - 2))
-    nterms=9
-    if nterms <= 0:
-        print("Please enter a positive integer")
-    else:
-        print("Fibonacci sequence:")
-        for i in range(nterms):
-            print(fibR(i))
+import unittest
+from .fiblib import *
 
-class num2str:
-    
-    def convert_num2words:
+
+class Challenge4(unittest.TestCase):
+
+    def setUp(self):
+        print('in setup method')
+
+    def tearDown(self):
+        print('in tear down method')
+
+    def test_fibseq(self):
+        seqf = [0, 1, 1, 2, 3, 5, 8, 13, 21]
+        self.assertTrue(seqf == FibSeq.fib(9), FibSeq.fib(9))
+
+
+
+if __name__ == '__main__':
+    unittest.main()
 
