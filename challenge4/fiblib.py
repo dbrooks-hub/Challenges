@@ -39,7 +39,6 @@ class FibSeq:
        """Recursive function to print Fibonacci sequence"""
        if n < 0:
            raise ValueError("Must use positive integers")
-
        if n == 0:
            return n
        elif n ==1:
