@@ -41,7 +41,7 @@ class FibSeq:
            raise ValueError("Must use positive integers")
        if n == 0:
            return n
-       elif n ==1:
+       elif n == 1:
            return n
        else:
            return FibSeq.fib_r(n-1) + FibSeq.fib_r(n-2)
