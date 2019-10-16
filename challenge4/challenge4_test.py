@@ -1,7 +1,6 @@
 import unittest
 from .fiblib import *
 
-
 class Challenge4(unittest.TestCase):
 
     def setUp(self):
@@ -21,7 +20,7 @@ class Challenge4(unittest.TestCase):
             #print(FibSeq.fib_r(i))
 
     def test_num2text(self):
-        dig = FibSeq.fib(9)
+        dig = FibSeq.fib(10)
         for i in dig:
             print(NumSeq.num2txt(i))
 
