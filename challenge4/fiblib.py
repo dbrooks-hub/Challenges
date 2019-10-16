@@ -64,9 +64,9 @@ class NumSeq:
         if (num == 0):
             return (numdict[num])
         #THIS IS WORKING
-        if(1 <= num < 19):
+        if(1 <= num <= 19):
             return(numdict[num])
-        # THIS IS NOT WORKING
-        elif(20 <= num < 99):
+        # THIS IS NOW WORKING
+        elif(20 <= num <= 99):
             tens, below_ten = divmod(num, 10)
-            return((numdict[tens - 2] + '-' + str(numdict[below_ten].lower)))
+            return((numdict[tens * 10] + '-' + str(numdict[below_ten].lower())))
