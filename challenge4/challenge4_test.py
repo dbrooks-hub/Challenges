@@ -15,22 +15,15 @@ class Challenge4(unittest.TestCase):
         self.assertTrue(seqf == FibSeq.fib(9), FibSeq.fib(9))
         print(seqf == FibSeq.fib(9), FibSeq.fib(9))
 
-    def test_fibseq_r(self):
-        nval = 9
-        for i in range (nval):
-            print(FibSeq.fib_r(i))
+    #def fibseq_r_test(self):
+        #nval = 9
+        #for i in range (nval):
+            #print(FibSeq.fib_r(i))
 
-    #def test_num2text(self):
-        #singledig = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-        #teens = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-        #tens = ["ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-
-        #secondval = 5
-        #leastsignval = 1
-        #print(singledig[leastsignval]) = > one
-        #print(tens[secondval]) = > fifty
-        #concantionate strings
-        # print(tens[secondval] + singledig[leastsignval]) = > fiftyone
+    def test_num2text(self):
+        dig = FibSeq.fib(9)
+        for i in dig:
+            print(NumSeq.num2txt(i))
 
 
 
