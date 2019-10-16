@@ -1,7 +1,6 @@
 import unittest
 from .fiblib import *
 
-
 class Challenge4(unittest.TestCase):
 
     def setUp(self):
@@ -11,21 +10,17 @@ class Challenge4(unittest.TestCase):
         print('in tear down method')
 
     def test_fibseq(self):
+        """ Unittest for FibSeq.fib"""
         seqf = [0, 1, 1, 2, 3, 5, 8, 13, 21]
         self.assertTrue(seqf == FibSeq.fib(9), FibSeq.fib(9))
         print(seqf == FibSeq.fib(9), FibSeq.fib(9))
 
-    #def fibseq_r_test(self):
-        #nval = 9
-        #for i in range (nval):
-            #print(FibSeq.fib_r(i))
-
     def test_num2text(self):
-        dig = FibSeq.fib(9)
+        """ Unittest for NumSeq.num2txt"""
+        dig = FibSeq.fib(10)
         for i in dig:
             print(NumSeq.num2txt(i))
-
-
+            #TODO finish num2txt for hundreds & thousands
 
 if __name__ == '__main__':
     unittest.main()
