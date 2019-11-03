@@ -1,5 +1,6 @@
 import unittest
 from .fiblib import *
+from .num_text_conversion import *
 
 class Challenge4(unittest.TestCase):
 
@@ -15,6 +16,7 @@ class Challenge4(unittest.TestCase):
         self.assertTrue(seqf == FibSeq.fib(9), FibSeq.fib(9))
         print(seqf == FibSeq.fib(9), FibSeq.fib(9))
     def test_threedig(self):
+        """Unittest for special cases in NumSeq"""
         seqh = [100, 101, 109, 110, 113, 125, 196, 500, 501, 509, 510, 513, 536, 999, 1000, 1001, 1010, 1013, 1020, 1025]
         for i in seqh:
             print(NumSeq.num2txt(i))
