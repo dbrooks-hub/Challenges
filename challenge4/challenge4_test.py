@@ -26,7 +26,7 @@ class Challenge4(unittest.TestCase):
         dig = FibSeq.fib(14)
         for i in dig:
             print(NumSeq.num2txt(i))
-            #TODO finish num2txt for hundreds & thousands
+            #TODO finish num2txt for > 999
 
 if __name__ == '__main__':
     unittest.main()
