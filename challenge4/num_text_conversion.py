@@ -35,9 +35,9 @@ class NumSeq:
         if 0 < hundreds:
             tpl_return += NumSeq.numdict[hundreds] + ' hundred'
             if (0 < tens):
-                tpl_return += ' and ' + tenssep
+                tpl_return += ' and ' + tenssep.lower()
         elif hundreds==0:
-            tpl_return += ' and ' + tenssep
+            tpl_return += ' and ' + tenssep.lower()
         return tpl_return
 
     @staticmethod
