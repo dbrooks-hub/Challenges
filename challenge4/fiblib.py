@@ -1,3 +1,5 @@
+from .num_text_conversion import *
+
 class FibSeqFactory:
     def __init__(self, number=0):
         self.number = number
@@ -27,16 +29,16 @@ class FibSeqFactory:
 
 
 class FibSeq:
-
+    @staticmethod
     def fib(n):
         """This method captures Fibonacci sequence in the specified range in an array
             example: Fibseq.fib_r(9) -> [0,1,1,2,3,5,8,13,21]"""
         to_return = []
-        for i in range(0,n):
+        for i in range(0, n):
             to_return.append(FibSeq.fib_r(i))
 
         return to_return
-
+    @staticmethod
     def fib_r(n):
        """Recursive function to print Fibonacci sequence"""
        if n < 0:
@@ -47,26 +49,3 @@ class FibSeq:
            return n
        else:
            return FibSeq.fib_r(n-1) + FibSeq.fib_r(n-2)
-
-class NumSeq:
-
-    @staticmethod
-    def num2txt(num):
-        """This method uses dictionary and array to function to print numbers to text"""
-        numdict = {0: "Zero", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine", \
-                     10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", \
-                     17: "Seventeen", 18: "Eighteen", 19: "Nineteen", 20: "Twenty", 30: "Thirty", 40: "Forty", 50: "Fifty", \
-                   60: "Sixty", 70: "Seventy", 80: "Eighty", 90: "Ninety"}
-        bigs = ['thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintrillion', 'sextillion', 'septillion']
-
-        if num < 0:
-            raise ValueError("Must use positive integers")
-        if (num == 0):
-            return (numdict[num])
-        #THIS IS WORKING
-        if(1 <= num <= 19):
-            return(numdict[num])
-        # THIS IS NOW WORKING
-        elif(20 <= num <= 99):
-            tens, below_ten = divmod(num, 10)
-            return((numdict[tens * 10] + '-' + str(numdict[below_ten].lower())))
