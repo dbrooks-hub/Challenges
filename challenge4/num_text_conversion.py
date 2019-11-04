@@ -1,7 +1,4 @@
 class NumSeq:
-    def __init__(self, number=0):
-        self.number = number
-
     numdict = {0: "Zero", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight",
                9: "Nine", \
                10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen", 15: "Fifteen", 16: "Sixteen", \
@@ -39,6 +36,29 @@ class NumSeq:
         elif hundreds==0:
             tpl_return += ' and ' + tenssep.lower()
         return tpl_return
+    @staticmethod
+    def get_tpl(num):
+        """This method gets triplets and returns them in an array"""
+        tpl = str(num)
+        tpl = tpl[::-1]
+        a = 0
+        aa = 0
+        output_rtn = ['']
+
+        for c in tpl:
+            a += 1
+            output_rtn[aa] = c + output_rtn[aa]
+            if a == 3:
+                output_rtn[aa] = int(output_rtn[aa])
+                aa += 1
+                a = 0
+                output_rtn.append('')
+        if len(output_rtn[aa]) < 3 and output_rtn[aa]:
+            output_rtn[aa] = int(output_rtn[aa])
+        elif len(output_rtn[aa]) == 0:
+            del(output_rtn[aa])
+            aa -= 1
+        return output_rtn
 
     @staticmethod
     def num2txt(num):
@@ -53,9 +73,21 @@ class NumSeq:
             return NumSeq.dbldig(num)
         elif 100 <= num <= 999:
             return NumSeq.tpldig(num)
+        else:
+            bigs_str = ''
+            tpls = NumSeq.get_tpl(num)
+            i = 0
+            for t in tpls:
+                if i == 0:
+                    bigs_str += NumSeq.tpldig(tpls[0])
+                    i += 1
+                    continue
 
+                if t != 0:
+                    bigs_str = NumSeq.tpldig(i) + ' ' + NumSeq.bigs[i - 1] + '' + bigs_str
+                    i += 1
+                else:
+                    i += 1
+            return bigs_str
 
         #WIP - All the Bigs (pairs of 3)
-
-        #while(num > 999)
-            #num =
