@@ -17,7 +17,7 @@ class FibSeqFactory:
         """
         num_seq = FibSeq.fib(self.number)
         text_seq = NumSeq.num2txt(num_seq)
-
+        #TODO Needs changes to work.
         assert len(num_seq) == len(text_seq)
 
         to_return = []
@@ -38,6 +38,7 @@ class FibSeq:
             to_return.append(FibSeq.fib_r(i))
 
         return to_return
+
     @staticmethod
     def fib_r(n):
        """Recursive function to print Fibonacci sequence"""
