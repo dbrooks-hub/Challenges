@@ -72,9 +72,40 @@ class Challenge4(unittest.TestCase):
     def test_num2text(self):
         """ Unittest for NumSeq.num2txt"""
         dig = FibSeq.fib(30)
-        for i in dig:
-            # TODO assertions
-            print(NumSeq.num2txt(i))
+        expect = ['Zero',
+'One',
+'One',
+'Two',
+'Three',
+'Five',
+'Eight',
+'Thirteen',
+'Twenty-one',
+'Thirty-four',
+'Fifty-five',
+'Eighty-nine',
+'One hundred and forty-four',
+'Two hundred and thirty-three',
+'Three hundred and seventy-seven',
+'Six hundred and ten',
+'Nine hundred and eighty-seven',
+'One thousand five hundred and ninety-seven',
+'One thousand five hundred and eighty-four',
+'One thousand one hundred and eighty-one',
+'One thousand seven hundred and sixty-five',
+'One thousand nine hundred and forty-six',
+'One thousand seven hundred and eleven',
+'One thousand six hundred and fifty-seven',
+'One thousand three hundred and sixty-eight',
+'One thousand and twenty-five',
+'One thousand three hundred and ninety-three',
+'One thousand four hundred and eighteen',
+'One thousand eight hundred and eleven',
+'One thousand two hundred and twenty-nine' ]
+        #TODO finish assertions & test
+        #for i in range (0, len(dig):
+            #self.assertEqual(NumSeq.num2txt(dig[i]), expect[i])
+            #print(NumSeq.num2txt(i))
 
     def test_get_fib_seq_with_text(self):
 
